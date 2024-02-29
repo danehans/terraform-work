@@ -143,3 +143,9 @@ variable "hostname" {
   type        = string
   default = "dhawton-vm"
 }
+
+variable "startup-script" {
+  description = "The startup script to use"
+  type        = string
+  default     = ""
+}

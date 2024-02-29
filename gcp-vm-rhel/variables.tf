@@ -129,3 +129,15 @@ variable "hostname" {
   type        = string
   default = "dhawton-rhel"
 }
+
+variable "startup-script" {
+  description = "The startup script to use"
+  type        = string
+  default     = ""
+}
+
+variable "is-fips" {
+  description = "Whether the VM is FIPS enabled"
+  type        = bool
+  default     = false
+}

@@ -30,6 +30,9 @@ resource "google_compute_instance" "vm" {
   }
 
   labels = var.labels
+  metadata = {
+    startup-script = var.startup-script
+  }
 
   dynamic "service_account" {
     for_each = var.service_accounts == null ? [] : [var.service_accounts]

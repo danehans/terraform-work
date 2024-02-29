@@ -25,4 +25,11 @@ module "gcp-vm-rhel" {
   allow_stopping_for_update = var.allow_stopping_for_update
   description = var.description
   hostname = var.hostname
+
+  startup-script = local.startup_script
+}
+
+locals {
+  script_name = var.is-fips ? "startup-fips.sh" : var.startup-script
+  startup_script = local.script_name != "" ? file(local.script_name) : ""
 }

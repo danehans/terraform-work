@@ -49,6 +49,10 @@ resource "google_compute_instance" "vm" {
     subnetwork_project = var.subnetwork_project
     network_ip         = var.network_ip
     stack_type         = var.stack_type
+
+    access_config {
+      network_tier = "PREMIUM"
+    }
   }
 
   allow_stopping_for_update = var.allow_stopping_for_update

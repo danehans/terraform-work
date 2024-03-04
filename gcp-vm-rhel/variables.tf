@@ -19,15 +19,15 @@ variable "machine_type" {
 variable "name" {
   description = "The name of the VM"
   type        = string
-  default = "dhawton-rhel"
+  default     = "dhawton-rhel"
 }
 
 variable "labels" {
   type        = map(string)
   description = "A set of key/value label pairs to assign to the instance."
-  default     = {
+  default = {
     created-by = "daniel_hawton"
-    team = "oss"
+    team       = "oss"
   }
 }
 
@@ -85,49 +85,49 @@ variable "boot_disk_auto_delete" {
 variable "boot_image_family" {
   description = "The family of the image to use for the VM"
   type        = string
-  default = "rhel-8"
+  default     = "rhel-8"
 }
 
 variable "boot_image_project" {
   description = "The project of the image to use for the VM"
   type        = string
-  default = "rhel-cloud"
+  default     = "rhel-cloud"
 }
 
 variable "boot_image_size" {
   description = "The size of the boot disk in GB"
   type        = number
-  default = 100
+  default     = 100
 }
 
 variable "boot_disk_type" {
   description = "The type of the boot disk"
   type        = string
-  default = "pd-balanced"
+  default     = "pd-balanced"
 }
 
 variable "can_ip_forward" {
   description = "Whether the VM can forward traffic"
   type        = bool
-  default = false
+  default     = false
 }
 
 variable "allow_stopping_for_update" {
   description = "Whether the VM can be stopped for update"
   type        = bool
-  default = false
+  default     = false
 }
 
 variable "description" {
   description = "The description of the VM"
   type        = string
-  default = "RHEL Testing"
+  default     = "RHEL Testing"
 }
 
 variable "hostname" {
   description = "The hostname of the VM"
   type        = string
-  default = "dhawton-rhel"
+  default     = "dhawton-rhel"
 }
 
 variable "startup-script" {

@@ -7,10 +7,8 @@ variable "project" {
 variable "zone" {
   type        = string
   description = "The zone in which the resource resides."
-  default     = ""
+  default     = "us-central1-a"
 }
-
-############################
 
 variable "machine_type" {
   type        = string
@@ -21,7 +19,7 @@ variable "machine_type" {
 variable "name" {
   description = "The name of the VM"
   type        = string
-  default     = "dhawton-vm"
+  default     = "dhawton"
 }
 
 variable "labels" {
@@ -78,9 +76,6 @@ variable "service_accounts" {
   description = "Service account and scopes that will be associated with the GCE instance."
 }
 
-#######################
-###### BOOT DISK ######
-#######################
 variable "boot_disk_auto_delete" {
   type        = bool
   description = "Whether the disk will be auto-deleted when the instance is deleted."
@@ -102,7 +97,7 @@ variable "boot_image_family" {
 variable "boot_image_project" {
   description = "The project of the image to use for the VM"
   type        = string
-  default     = "rhel-cloud"
+  default     = "ubuntu-os-cloud"
 }
 
 variable "boot_image_size" {
@@ -111,14 +106,11 @@ variable "boot_image_size" {
   default     = 100
 }
 
-# Can be pd-ssd, pd-standard, or pd-balanced
 variable "boot_disk_type" {
   description = "The type of the boot disk"
   type        = string
   default     = "pd-balanced"
 }
-
-#######################
 
 variable "can_ip_forward" {
   description = "Whether the VM can forward traffic"
@@ -135,23 +127,11 @@ variable "allow_stopping_for_update" {
 variable "description" {
   description = "The description of the VM"
   type        = string
-  default     = "A VM created by Terraform"
+  default     = ""
 }
 
 variable "hostname" {
   description = "The hostname of the VM"
   type        = string
-  default     = "dhawton-vm"
-}
-
-variable "startup-script" {
-  description = "The startup script to use"
-  type        = string
-  default     = ""
-}
-
-variable "metadata_user_data" {
-  description = "The metadata user data to use"
-  type        = string
-  default     = ""
+  default     = "dhawton-ubuntu.hawton.cloud"
 }

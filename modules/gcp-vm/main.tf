@@ -9,14 +9,14 @@ terraform {
 }
 
 data "google_compute_image" "image" {
-  family = var.boot_image_family
+  family  = var.boot_image_family
   project = var.boot_image_project
 }
 
 resource "google_compute_instance" "vm" {
-  name        = var.name
+  name         = var.name
   machine_type = var.machine_type
-  zone        = var.zone
+  zone         = var.zone
 
   boot_disk {
     auto_delete = var.boot_disk_auto_delete
@@ -32,6 +32,7 @@ resource "google_compute_instance" "vm" {
   labels = var.labels
   metadata = {
     startup-script = var.startup-script
+    user-data      = var.metadata_user_data
   }
 
   dynamic "service_account" {
@@ -56,6 +57,6 @@ resource "google_compute_instance" "vm" {
   }
 
   allow_stopping_for_update = var.allow_stopping_for_update
-  description = var.description
-  hostname = var.hostname
+  description               = var.description
+  hostname                  = var.hostname
 }

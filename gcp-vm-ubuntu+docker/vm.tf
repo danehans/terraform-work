@@ -25,5 +25,5 @@ module "gcp-vm-ubuntu" {
   allow_stopping_for_update = var.allow_stopping_for_update
   description               = var.description
   hostname                  = var.hostname
-  metadata_user_data        = file("cloud-init.yaml")
+  metadata_user_data        = file("${path.module}/cloud-init.yaml")
 }

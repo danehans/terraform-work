@@ -13,7 +13,7 @@ variable "zone" {
 variable "machine_type" {
   type        = string
   description = "The machine type to create"
-  default     = "e2-medium"
+  default     = "e2-standard-8"
 }
 
 variable "name" {

@@ -38,7 +38,7 @@ variable "node_pool_name" {
 variable "node_pool_machine_type" {
   description = "The machine type for the GKE node pool"
   type        = string
-  default     = "e2-standard-4"
+  default     = "e2-standard-8"
 }
 
 variable "node_pool_disk_size" {

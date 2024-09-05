@@ -22,4 +22,4 @@ gcloud compute ssh dhawton --project solo-oss --zone us-central1-a -- 'sudo user
 
 set +ex
 
-echo "VM is setup. Use $(gcloud compute ssh dhawton --project solo-oss --zone us-central1-a) to connect."
+echo "VM is setup. Use \$(gcloud compute ssh dhawton --project solo-oss --zone us-central1-a) to connect."

@@ -7,26 +7,26 @@ variable "project" {
 variable "zone" {
   type        = string
   description = "The zone in which the resource resides."
-  default     = "us-central1-a"
+  default     = "us-west4-b"
 }
 
 variable "machine_type" {
   type        = string
   description = "The machine type to create"
-  default     = "e2-standard-8"
+  default     = "e2-standard-32"
 }
 
 variable "name" {
   description = "The name of the VM"
   type        = string
-  default     = "dhawton"
+  default     = "dhansen"
 }
 
 variable "labels" {
   type        = map(string)
   description = "A set of key/value label pairs to assign to the instance."
   default = {
-    created-by = "daniel_hawton"
+    created-by = "daneyon_hansen"
     team       = "oss"
   }
 }
@@ -133,5 +133,5 @@ variable "description" {
 variable "hostname" {
   description = "The hostname of the VM"
   type        = string
-  default     = "dhawton-ubuntu.hawton.cloud"
+  default     = "solo-system-dhansen.local"
 }

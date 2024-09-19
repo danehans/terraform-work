@@ -17,3 +17,20 @@ The variables.tf files in the templates above mirror the full variables of the m
 I can set per-template defaults and still override from the commandline.
 
 See [modules/gcp-vm/variables.tf](./modules/gcp-vm/variables.tf) for the full list of variables.
+
+## Usage
+
+Change to a directory and run:
+
+To create:
+
+```sh
+terraform init
+terraform apply --auto-approve
+```
+
+To delete:
+
+```sh
+terraform destroy -auto-approve
+```

@@ -103,7 +103,7 @@ variable "boot_image_project" {
 variable "boot_image_size" {
   description = "The size of the boot disk in GB"
   type        = number
-  default     = 100
+  default     = 150
 }
 
 variable "boot_disk_type" {

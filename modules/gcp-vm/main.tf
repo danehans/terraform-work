@@ -35,6 +35,11 @@ resource "google_compute_instance" "vm" {
     user-data      = var.metadata_user_data
   }
 
+  scheduling {
+    on_host_maintenance = "terminate"  # Required for GPU-enabled VMs
+    automatic_restart   = false        # Optional: Disable auto-restart
+  }
+
   dynamic "service_account" {
     for_each = var.service_accounts == null ? [] : [var.service_accounts]
     content {

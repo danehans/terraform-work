@@ -7,9 +7,10 @@ variable "project" {
 variable "zone" {
   type        = string
   description = "The zone in which the resource resides."
-  default     = "us-central1-a"
+  default     = "us-west1-a"
 }
 
+# Use g2-standard-8 or greater machine type for GPU dev.
 variable "machine_type" {
   type        = string
   description = "The machine type to create"
@@ -19,14 +20,14 @@ variable "machine_type" {
 variable "name" {
   description = "The name of the VM"
   type        = string
-  default     = "dhawton"
+  default     = "dhansen"
 }
 
 variable "labels" {
   type        = map(string)
   description = "A set of key/value label pairs to assign to the instance."
   default = {
-    created-by = "daniel_hawton"
+    created-by = "daneyon_hansen"
     team       = "oss"
   }
 }
@@ -100,10 +101,11 @@ variable "boot_image_project" {
   default     = "ubuntu-os-cloud"
 }
 
+# [danehans]: Increased boot disk from 100.
 variable "boot_image_size" {
   description = "The size of the boot disk in GB"
   type        = number
-  default     = 100
+  default     = 200
 }
 
 variable "boot_disk_type" {
@@ -133,5 +135,5 @@ variable "description" {
 variable "hostname" {
   description = "The hostname of the VM"
   type        = string
-  default     = "dhawton-ubuntu.hawton.cloud"
+  default     = "ubuntu.dhansen.local"
 }
